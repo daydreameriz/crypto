@@ -50,7 +50,7 @@ class CryptoCurrencyService
         foreach ($data as $item) {
             $tempArray = [];
 
-            $tempArray['symbol'] = $item[0];
+            $tempArray['symbol'] = strtolower(substr($item[0], 1));
             $tempArray['last_price'] = $item[7];
             $tempArray['daily_change'] = $item[5];
             $tempArray['daily_change_percent'] = $item[6];
