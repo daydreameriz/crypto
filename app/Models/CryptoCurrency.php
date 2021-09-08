@@ -26,6 +26,11 @@ class CryptoCurrency extends Model
         'daily_low' => 'float',
     ];
 
+    public function setSymbolAttribute($value)
+    {
+        $this->attributes['symbol'] = strtoupper(substr($value, 1));
+    }
+
     public function getDailyChangePercentAttribute($value)
     {
         return number_format($value, 2, '.', '').'%';
